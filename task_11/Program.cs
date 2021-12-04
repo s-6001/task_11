@@ -8,11 +8,11 @@ namespace task_11
         {
             while (true)
             {
-                bool mistake = false;
-                Equation equation = new Equation { };
+                bool mistake = false;   //Есть ошибка при вводое значений?
+                Equation equation = new Equation { };   //создаем экземпляр
                 Console.WriteLine("Вас приветствует программа решения уравнения 0=kx+b.");
                 Console.Write("Введите k = ");
-                try
+                try //пытаемся прочитать k
                 {
                     equation.k = Convert.ToDouble(Console.ReadLine());
                 }
@@ -26,7 +26,7 @@ namespace task_11
                     Console.Write("Введите b = ");
                     try
                     {
-                        equation.b = Convert.ToDouble(Console.ReadLine());
+                        equation.b = Convert.ToDouble(Console.ReadLine());  //если не было ошибки пытаемся прочитать b
                     }
                     catch
                     {
@@ -34,7 +34,7 @@ namespace task_11
                         Console.WriteLine("Не удалось прочитать число b.");
                     }
                 }
-                if (mistake == false)
+                if (mistake == false)   //если не было ошибки вызываем структуру
                 {
                     equation.Root();
                 }
@@ -47,7 +47,7 @@ namespace task_11
             public double b;
             public void Root()
             {
-                if (k == 0 && b != 0)
+                if (k == 0 && b != 0) //варианты решений уравнения
                 {
                     Console.WriteLine("Решений нет.");
                 }
